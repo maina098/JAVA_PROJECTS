@@ -1,0 +1,87 @@
+/* Input style:
+    double value
+    unit name
+    [In case of any input error the input is random]
+   
+   Explanation:
+    It takes value and unit 
+    units like -> fm, a, nm, um, mm, cm, dm, m, dam, hm, km
+     (scroll a bit down to see what these mean)
+    then we convert the value to rest available units
+   
+   Usage:
+    Usage of Enum, Concept of Objects, Scanner, Math
+*/
+
+import java.util.Scanner;
+
+public class Program
+{
+    private static Scanner sc = new Scanner(System.in);
+    
+    public static void main(String[] args) {
+        
+        double v;
+        length un;
+        length[] us = {length.fm, length.a, length.nm, length.um, length.mm, length.cm, length.dm, length.m, length.dam, length.hm, length.km};
+        
+        try {
+            v = sc.nextDouble();
+            un = length.valueOf(sc.next().trim().toLowerCase());
+        } catch(Exception e) {
+            v = (int)(Math.random()*301);
+            un = us[(int)(Math.random()*11)];
+        }
+    
+        Length l = un.of(v);
+        System.out.println("Original length = " + l);
+        Length c = l.to(length.fm);
+        
+        for(length u : us)
+            if(un != u)
+                System.out.println("Converted to " + l.to(u));
+    }
+}
+
+enum length {
+    fm(Math.pow(10, -15)),    // fermi or femtometer
+    a(Math.pow(10, -10)),     // Angstrom
+    nm(Math.pow(10, -9)),     // nanometer
+    um(Math.pow(10, -6)),     // micrometer
+    mm(0.001),                // millimeter
+    cm(0.01),                 // centimeter
+    dm(0.1),                  // decimeter
+    m(1),                     // meter
+    dam(10),                  // decameter
+    hm(100),                  // hectometer
+    km(1000);                 // kilometer
+    
+    final double meters;
+    
+    length(double meters) {
+        this.meters = meters;
+    }
+    
+    public Length of(double value) {
+        return new Length(value, this);
+    }
+}
+
+class Length {
+    private double value;
+    private length unit;
+    
+    Length(double value, length unit) {
+        this.value = value;
+        this.unit = unit;
+    }
+    
+    public Length to(length unit) {
+        return new Length(this.value * this.unit.meters / unit.meters, unit);
+    }
+    
+    @Override
+    public String toString() {
+        return value + " " + unit.name();
+    }
+}
