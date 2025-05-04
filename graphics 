@@ -1,0 +1,72 @@
+// enter a shape ( rectangle, triangle, square, or circle) and the computer will generate the shape!( it's right angle triangle for triangle)
+import java.util.Scanner;
+
+public class GraphicsGenerator {
+    public static void main(String[] args) {
+        System.out.println("Please upvote and comment! ");
+        System.out.println("Here's your request:");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println();
+        String shape = scanner.nextLine().toLowerCase();
+
+        switch (shape) {
+            case "rectangle":
+                generateRectangle();
+                break;
+            case "square":
+                generateSquare();
+                break;
+            case "triangle":
+                generateTriangle();
+                break;
+            case "circle":
+                generateCircle();
+                break;
+            default:
+                System.out.println("🤨...Invalid shape. Please try again.");
+        }
+    }
+
+    public static void generateRectangle() {
+        for (int i = 0; i < 7; i++) {
+            for (int j = 0; j < 15; j++) {
+                System.out.print("@ ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void generateSquare() {
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                System.out.print("@ ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void generateTriangle() {
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j <= i; j++) {
+                System.out.print("@ ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void generateCircle() {
+        int radius = 5;
+        for (int i = -radius; i <= radius; i++) {
+            for (int j = -radius; j <= radius; j++) {
+                if (i * i + j * j <= radius * radius) {
+                    System.out.print("@ ");
+                } else {
+                    System.out.print("  ");
+                }
+            }
+            System.out.println();
+        
+        }
+    
+    }
+}
