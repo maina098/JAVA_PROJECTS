@@ -1,0 +1,118 @@
+/* 
+enter a word and let Computers do some computing 
+
+(if you guys know other ways to get bits(💎) without finishing a course, please share, i need to buy hearts, i cant wait for 4 hours )*/
+
+import java.util.Scanner;
+
+public class EnglishToMorseCode {
+    static String englishToMorseCode(String translate) {
+        StringBuilder morseCode = new StringBuilder();
+        translate = translate.toUpperCase();
+
+        for (char c : translate.toCharArray()) {
+            switch (c) {
+                case ' ':
+                    morseCode.append("/ ");
+                    break;
+                case 'A':
+                    morseCode.append(".- ");
+                    break;
+                case 'B':
+                    morseCode.append("-... ");
+                    break;
+                case 'C':
+                    morseCode.append("-.-. ");
+                    break;
+                case 'D':
+                    morseCode.append("-.. ");
+                    break;
+                // Add more cases for other letters (E-Z)
+                case 'E':
+                    morseCode.append(". ");
+                    break;
+                case 'F':
+                    morseCode.append("..-. ");
+                    break;
+                case 'G':
+                    morseCode.append("--. ");
+                    break;
+                case 'H':
+                    morseCode.append(".... ");
+                    break;
+                case 'I':
+                    morseCode.append(".. ");
+                    break;
+                case 'J':
+                    morseCode.append(".--- ");
+                    break;
+                case 'K':
+                    morseCode.append("-.- ");
+                    break;
+                case 'L':
+                    morseCode.append(".-.. ");
+                    break;
+                case 'M':
+                    morseCode.append("-- ");
+                    break;
+                case 'N':
+                    morseCode.append("-. ");
+                    break;
+                case 'O':
+                    morseCode.append("--- ");
+                    break;
+                case 'P':
+                    morseCode.append(".--. ");
+                    break;
+                case 'Q':
+                    morseCode.append("--.- ");
+                    break;
+                case 'R':
+                    morseCode.append(".-. ");
+                    break;
+                case 'S':
+                    morseCode.append("... ");
+                    break;
+                case 'T':
+                    morseCode.append("- ");
+                    break;
+                case 'U':
+                    morseCode.append("..- ");
+                    break;
+                case 'V':
+                    morseCode.append("...- ");
+                    break;
+                case 'W':
+                    morseCode.append(".-- ");
+                    break;
+                case 'X':
+                    morseCode.append("-..- ");
+                    break;
+                case 'Y':
+                    morseCode.append("-.-- ");
+                    break;
+                case 'Z':
+                    morseCode.append("--.. ");
+                    break;
+                default:
+                    morseCode.append("# "); // Handle unknown characters
+            }
+        }
+
+        return morseCode.toString().trim();
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        
+        String translate = scan.nextLine();
+        System.out.println();
+        System.out.println("👩‍💻 MESSAGE '" + translate + "' ENCRIPTED: ");
+        System.out.println();
+        
+        System.out.println(englishToMorseCode(translate));
+        System.out.println();
+        System.out.println();
+    }
+}
+
