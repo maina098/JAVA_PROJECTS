@@ -1,0 +1,54 @@
+// a java program to describe the kind of character someone have.
+// Despite the fact that this code needs some portal for survey, i'm currently unable to create portals, so i have just asked for inputs as the answers to survey.
+// Hope you like it, and by this code i don't mean to hurt anybody's feeling
+//So, don't be extreme serious be this code.
+import java.util.*;
+class kind_of_character
+{
+    public static void main(String args[])
+    {
+        Scanner in=new Scanner(System.in);
+        //Survey question 1:
+        System.out.println("What if you are a student and your parents went somewhere leaving you at home, will you follow your daily routine or you will have fun");
+        System.out.println("write 'a' if you will follow daily routine");
+        System.out.println("write 'b' if you will have fun???");
+        char q1=in.next().charAt(0);
+        
+        //Survey question 2:
+        //Don't be offensive to this question.
+        System.out.println("Imagine, you saw a very poor injured who is of a religion which you basically don't like.  Will you help that child???");
+        
+        System.out.println("write 'a' if you will help");
+        System.out.println("write 'b' if you will ignore");
+        char q2=in.next().charAt(0);
+        
+        //Survey question 3;
+        System.out.println("What if there is a situation in which your best friend have done something very wrong and it is totally depending on you to ignore his/her crime or to hurt victim's heart???");
+       
+        System.out.println("write 'a' if you will report his/her crime");
+        System.out.println("write 'b' if you will ignore");
+        char q3=in.next().charAt(0);
+        // read the code till here!!!!!!!!!!!!
+        if(q1=='a'&&q2=='a'&&q3=='a')
+        System.out.println("Congrats!!!  you are very kind hearted,consistent and honest person...(^-^)");
+        else if(q1=='a'&&q2=='a'&&q3=='b')
+        System.out.println("You are kind hearted,consistent and emotional person");
+        else if(q1=='a'&&q2=='b'&&q3=='b')
+        System.out.println("You consistent,emotional and orthodox personality");
+        else if(q1=='a'&&q2=='b'&&q3=='a')
+        System.out.println("You have a consistent,honest and orthodox personality");
+        else if(q1=='b'&&q2=='b'&&q3=='b')
+        System.out.println("You have a amusing,orthodox and emotional personality");
+        else if(q1=='b'&&q2=='b'&&q3=='a')
+        System.out.println("You have amusing,orthodox and honest personality");
+        else if(q1=='b'&&q2=='a'&&q3=='a')
+        System.out.println("You are very kind hearted,amusing and honest person");
+        else if(q1=='b'&&q2=='a'&&q3=='b')
+        System.out.println("you are a amusing,kind hearted and emotional person");
+        else
+        System.out.println("You are a good person");
+        
+        System.out.println("Thankyou so much for you response");
+        
+    }
+}
